@@ -68,10 +68,10 @@ export function Header() {
           {/* Logo and Brand Name */}
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="p-1.5 bg-card dark:bg-gray-800 rounded-lg group-hover:scale-105 transition-transform duration-200 shadow-sm">
-              <img src="/light_logo.png" alt="Aithletiq Logo" className="h-9 w-auto sm:h-10" />
+              <img src="/light_logo.png" alt="Athlytiq Logo" className="h-9 w-auto sm:h-10" />
             </div>
             <span className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent tracking-tight">
-              aithletiq
+              Athlytiq
             </span>
           </Link>
 

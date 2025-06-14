@@ -101,14 +101,14 @@ export default function AuthPage() {
               <Dumbbell className="h-6 w-6 text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              aithletiq
+              Athlytiq
             </span>
           </Link>
         </div>
 
         <Card className="border-border/50">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Welcome to aithletiq</CardTitle>
+            <CardTitle className="text-2xl">Welcome to Athlytiq</CardTitle>
             <p className="text-muted-foreground">Sign in to your account or create a new one</p>
           </CardHeader>
           <CardContent>

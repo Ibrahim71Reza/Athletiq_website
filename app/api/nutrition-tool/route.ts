@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 const MODEL_NAME = "gemini-1.5-flash-latest"; 
 const API_KEY = process.env.GEMINI_API_KEY || "";
 
-const MEAL_PLANNER_SYSTEM_INSTRUCTION = `You are "NutriPlanner AI" for the Aithletiq fitness app.
+const MEAL_PLANNER_SYSTEM_INSTRUCTION = `You are "NutriPlanner AI" for the Athlytiq fitness app.
 Your task is to generate a structured, helpful, and general meal plan based on the user's inputs, specifically for the number of days specified in 'Plan Duration'.
 
 YOU MUST ADHERE TO THE FOLLOWING RULES:
@@ -49,7 +49,7 @@ YOU MUST ADHERE TO THE FOLLOWING RULES:
 4.  **Estimates Only:** All nutritional values are implied and general. You are not performing precise calculations.
 `;
 
-const RECIPE_GENERATOR_SYSTEM_INSTRUCTION = `You are "ChefBot AI" for the Aithletiq fitness app.
+const RECIPE_GENERATOR_SYSTEM_INSTRUCTION = `You are "ChefBot AI" for the Athlytiq fitness app.
 Your primary role is to generate HEALTHY and NUTRITIOUS recipe ideas that align with fitness goals, based on user inputs.
 
 YOU MUST ADHERE TO THE FOLLOWING RULES:

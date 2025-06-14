@@ -15,7 +15,7 @@ export default function DownloadPage() {
           </Link>
           <h1 className="text-3xl font-bold">
             <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              Download aithletiq
+              Download Athlytiq
             </span>
           </h1>
         </div>
@@ -26,7 +26,7 @@ export default function DownloadPage() {
               <h2 className="text-4xl font-bold mb-4">
                 Get the{" "}
                 <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                  aithletiq
+                  Athlytiq
                 </span>{" "}
                 app
               </h2>
@@ -74,7 +74,7 @@ export default function DownloadPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl" />
               <img
                 src="/placeholder.svg?height=600&width=300"
-                alt="aithletiq App Screenshot"
+                alt="Athlytiq App Screenshot"
                 className="w-full h-full object-cover rounded-3xl shadow-2xl"
               />
             </div>
@@ -84,7 +84,7 @@ export default function DownloadPage() {
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-8">
             Why Choose{" "}
-            <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">aithletiq</span>
+            <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">Athlytiq</span>
             ?
           </h3>
 

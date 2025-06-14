@@ -348,7 +348,7 @@ export default function HomePage() {
     {
       id: "1",
       user_id: "athlete1",
-      content: "Just completed my first marathon training with Aithletiq! The AI coaching made all the difference. 🏃‍♂️",
+      content: "Just completed my first marathon training with Athlytiq! The AI coaching made all the difference. 🏃‍♂️",
       created_at: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
       updated_at: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
     },
@@ -560,7 +560,7 @@ export default function HomePage() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 text-gray-900 dark:text-white">
-              ABOUT <span className="text-gray-600 dark:text-gray-300">AITHLETIQ</span>
+              ABOUT <span className="text-gray-600 dark:text-gray-300">Athlytiq</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               We're revolutionizing fitness through AI-powered technology, combining workout tracking, health
@@ -622,7 +622,7 @@ export default function HomePage() {
               POWERFUL <span className="text-gray-600 dark:text-gray-300">FEATURES</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Discover the cutting-edge technology that makes Aithletiq the most advanced fitness ecosystem
+              Discover the cutting-edge technology that makes Athlytiq the most advanced fitness ecosystem
             </p>
           </motion.div>
 
@@ -974,7 +974,7 @@ export default function HomePage() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 text-gray-900 dark:text-white">
-              DOWNLOAD <span className="text-gray-600 dark:text-gray-300">AITHLETIQ</span>
+              DOWNLOAD <span className="text-gray-600 dark:text-gray-300">Athlytiq</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Get the most advanced AI fitness tracker on all your devices. Start your transformation today.
@@ -1048,7 +1048,7 @@ export default function HomePage() {
                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white dark:bg-gray-900 rounded-lg flex items-center justify-center">
                   <Dumbbell className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
                 </div>
-                <span className="font-bold text-lg sm:text-xl tracking-tight">AITHLETIQ</span>
+                <span className="font-bold text-lg sm:text-xl tracking-tight">Athlytiq</span>
               </div>
               <p className="text-sm sm:text-base text-gray-300 dark:text-gray-700 mb-4 max-w-md">
                 Transform your fitness journey with AI-powered tracking, personalized workouts, intelligent nutrition,
@@ -1140,7 +1140,7 @@ export default function HomePage() {
                 {
                   icon: Mail,
                   title: "Email Us",
-                  details: "support@aithletiq.com",
+                  details: "support@Athlytiq.com",
                   description: "Response within 24 hours",
                 },
                 {
@@ -1182,7 +1182,7 @@ export default function HomePage() {
 
           <div className="border-t border-gray-800 dark:border-gray-200 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-300 dark:text-gray-700 text-xs sm:text-sm">
-              © 2024 Aithletiq. All rights reserved.
+              © 2024 Athlytiq. All rights reserved.
             </p>
             <div className="flex items-center space-x-4">
               <span className="text-gray-300 dark:text-gray-700 text-xs sm:text-sm">Download on:</span>

@@ -333,7 +333,7 @@ export default function ProfilePage() {
             <CardContent>
               <div className="space-y-2 text-sm">
                 <p>• Complete your profile information</p>
-                <p>• Download the aithletiq mobile app</p>
+                <p>• Download the Athlytiq mobile app</p>
                 <p>• Start tracking your workouts</p>
                 <p>• Join the community discussions</p>
               </div>

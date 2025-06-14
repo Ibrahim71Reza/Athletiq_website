@@ -102,7 +102,7 @@ export default function CommunityPage() {
     {
       id: "1",
       user_id: "athlete1",
-      content: "Just completed my first marathon training with Aithletiq! The AI coaching made all the difference. 🏃‍♂️",
+      content: "Just completed my first marathon training with Athlytiq! The AI coaching made all the difference. 🏃‍♂️",
       user_name: "Marathon Runner",
       created_at: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
       updated_at: new Date(Date.now() - 1000 * 60 * 30).toISOString(),

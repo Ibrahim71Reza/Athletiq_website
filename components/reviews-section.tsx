@@ -71,7 +71,7 @@ export function ReviewsSection() {
               What People Say
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">Real feedback from our amazing aithletiq community</p>
+          <p className="text-xl text-muted-foreground">Real feedback from our amazing Athlytiq community</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -103,7 +103,7 @@ export function ReviewsSection() {
                     <p className="font-semibold text-foreground">
                       {currentReviewData.is_anonymous ? "Anonymous User" : currentReviewData.user_name}
                     </p>
-                    <p className="text-sm text-muted-foreground">aithletiq User</p>
+                    <p className="text-sm text-muted-foreground">Athlytiq User</p>
                   </div>
                 </div>
               </CardContent>

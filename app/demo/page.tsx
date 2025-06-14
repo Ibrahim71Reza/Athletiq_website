@@ -105,7 +105,7 @@ export default function DemoPage() {
                 </span>
               </h1>
               <p className="text-sm sm:text-base text-muted-foreground mt-1">
-                See Aithletiq in action!
+                See Athlytiq in action!
               </p>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function DemoPage() {
             <CardContent className="p-6 sm:p-8 text-center">
               <h3 className="text-xl sm:text-2xl font-bold mb-4">Ready to Get Started?</h3>
               <p className="text-sm sm:text-base mb-6 opacity-90">
-                Download Aithletiq today and start your AI-powered fitness journey!
+                Download Athlytiq today and start your AI-powered fitness journey!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/download">

@@ -47,7 +47,7 @@ export function HeroSection() {
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                  AITHLETIQ
+                  Athlytiq
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-lg">{heroSlides[currentSlide].subtitle}</p>

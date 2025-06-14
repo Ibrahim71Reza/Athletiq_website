@@ -82,7 +82,7 @@ export function FeedbackForm() {
                   Share Your Feedback
                 </span>
               </CardTitle>
-              <p className="text-muted-foreground">Help us improve aithletiq with your valuable feedback</p>
+              <p className="text-muted-foreground">Help us improve Athlytiq with your valuable feedback</p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -117,7 +117,7 @@ export function FeedbackForm() {
                     id="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Tell us about your experience with aithletiq..."
+                    placeholder="Tell us about your experience with Athlytiq..."
                     rows={4}
                     required
                   />

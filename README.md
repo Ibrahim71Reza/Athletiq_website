@@ -1,2 +1,2 @@
-# Aithletiq_website
+# Athlytiq_website
 The Ultimate Fitness tracking app

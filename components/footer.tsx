@@ -12,7 +12,7 @@ export function Footer() {
                 <Dumbbell className="h-6 w-6 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                aithletiq
+                Athlytiq
               </span>
             </Link>
             <p className="text-muted-foreground">
@@ -115,7 +115,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} aithletiq. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Athlytiq. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -8,13 +8,13 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "aithletiq - AI-Powered Fitness Tracking",
+  title: "Athlytiq - AI-Powered Fitness Tracking",
   description:
     "Transform your fitness journey with AI-powered tracking, personalized nutrition, and a supportive community.",
   keywords: "fitness, workout tracking, AI nutrition, health monitoring, fitness community",
-  authors: [{ name: "aithletiq Team" }],
+  authors: [{ name: "Athlytiq Team" }],
   openGraph: {
-    title: "aithletiq - AI-Powered Fitness Tracking",
+    title: "Athlytiq - AI-Powered Fitness Tracking",
     description:
       "Transform your fitness journey with AI-powered tracking, personalized nutrition, and a supportive community.",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "aithletiq - AI-Powered Fitness Tracking",
+    title: "Athlytiq - AI-Powered Fitness Tracking",
     description:
       "Transform your fitness journey with AI-powered tracking, personalized nutrition, and a supportive community.",
   },

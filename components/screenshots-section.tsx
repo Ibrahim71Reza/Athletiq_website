@@ -70,7 +70,7 @@ export function ScreenshotsSection() {
               App Screenshots
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">Explore the beautiful and intuitive interface of aithletiq</p>
+          <p className="text-xl text-muted-foreground">Explore the beautiful and intuitive interface of Athlytiq</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
