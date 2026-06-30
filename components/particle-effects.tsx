@@ -30,7 +30,7 @@ export default function ParticleEffects({ variant = "fitness", intensity = "medi
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { theme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | null>(null)
   const particlesRef = useRef<Particle[]>([])
   const mouseRef = useRef({ x: 0, y: 0 })
   const timeRef = useRef(0)

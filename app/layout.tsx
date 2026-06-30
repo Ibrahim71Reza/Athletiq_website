@@ -1,5 +1,5 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -26,9 +26,13 @@ export const metadata: Metadata = {
     description:
       "Transform your fitness journey with AI-powered tracking, personalized nutrition, and a supportive community.",
   },
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   generator: "v0.dev",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
