@@ -1,6 +1,5 @@
 // app/api/analyze-food/route.ts
 import { 
-    GoogleGenerativeAI, 
     HarmCategory, 
     HarmBlockThreshold, 
     Part, 
@@ -8,13 +7,17 @@ import {
     SafetySetting // <--- IMPORT THIS
 } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
-
-const MODEL_NAME = "gemini-3.1-flash-lite"; 
-const API_KEY = process.env.GEMINI_API_KEY || "";
+import {
+    createGeminiClient,
+    formatGeminiError,
+    GEMINI_MODEL,
+    hasGeminiApiKey,
+    missingGeminiApiKeyBody,
+} from "@/lib/gemini";
 
 export async function POST(req: NextRequest) {
-if (!API_KEY) {
-    return NextResponse.json({ error: "API key not configured" }, { status: 500 });
+if (!hasGeminiApiKey()) {
+    return NextResponse.json(missingGeminiApiKeyBody(), { status: 500 });
 }
 
 try {
@@ -29,8 +32,8 @@ try {
     return NextResponse.json({ error: "Missing prompt" }, { status: 400 });
     }
 
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ model: MODEL_NAME });
+    const genAI = createGeminiClient();
+    const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
 
     const generationConfig = {
     temperature: 0.7,
@@ -90,14 +93,7 @@ try {
 
 } catch (error: any) {
     console.error("Error in /api/analyze-food:", error);
-    let errorMessage = "AI analysis request failed.";
-    if (error.message) errorMessage = error.message;
-    // Check for specific Gemini API error structures if available
-    if (error.response && error.response.data && error.response.data.error && error.response.data.error.message) {
-        errorMessage = error.response.data.error.message;
-    } else if (error.details) { // Sometimes Gemini errors have a 'details' field
-        errorMessage += ` Details: ${error.details}`;
-    }
-    return NextResponse.json({ error: errorMessage, details: error.toString() }, { status: 500 });
+    const formattedError = formatGeminiError(error, "AI analysis request failed.");
+    return NextResponse.json(formattedError.body, { status: formattedError.status });
 }
 }

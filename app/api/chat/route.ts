@@ -1,10 +1,13 @@
 // app/api/chat/route.ts
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, Content } from "@google/generative-ai";
+import { HarmCategory, HarmBlockThreshold, Content } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
-
-// CONFIRM THIS IS THE MODEL NAME THAT WORKED FOR YOU
-const MODEL_NAME = "gemini-3.1-flash-lite";
-const API_KEY = process.env.GEMINI_API_KEY || "";
+import {
+    createGeminiClient,
+    formatGeminiError,
+    GEMINI_MODEL,
+    hasGeminiApiKey,
+    missingGeminiApiKeyBody,
+} from "@/lib/gemini";
 
 const SYSTEM_INSTRUCTION = `You are "FitBot", a friendly, highly knowledgeable, and motivating AI assistant.
 Your expertise is STRICTLY LIMITED to:
@@ -40,9 +43,9 @@ const BOT_INITIAL_GREETING = "Hello! I'm FitBot. I can answer your fitness quest
 export async function POST(req: NextRequest) {
 console.log("API Route: POST request received.");
 
-if (!API_KEY) {
+if (!hasGeminiApiKey()) {
     console.error("API Route: API key not configured!");
-    return NextResponse.json({ error: "API key not configured" }, { status: 500 });
+    return NextResponse.json(missingGeminiApiKeyBody(), { status: 500 });
 }
 
 try {
@@ -55,9 +58,9 @@ try {
     return NextResponse.json({ response: BOT_INITIAL_GREETING });
     }
 
-    const genAI = new GoogleGenerativeAI(API_KEY);
+    const genAI = createGeminiClient();
     const model = genAI.getGenerativeModel({
-        model: MODEL_NAME,
+        model: GEMINI_MODEL,
         systemInstruction: SYSTEM_INSTRUCTION, // This is where the main behavioral control happens
     });
 
@@ -128,11 +131,7 @@ try {
     // console.error("Full Error Object (stringified):", JSON.stringify(error, Object.getOwnPropertyNames(error)));
     console.error("--------------------------------------------------");
     
-    let detailedErrorMessage = error.message || "Unknown error occurred";
-    if (error.cause && typeof error.cause === 'object' && (error.cause as any).message) {
-        detailedErrorMessage = `${error.message} (Cause: ${(error.cause as any).message})`;
-    }
-
-    return NextResponse.json({ error: "AI service request failed.", details: detailedErrorMessage }, { status: 500 });
+    const formattedError = formatGeminiError(error, "AI service request failed.");
+    return NextResponse.json(formattedError.body, { status: formattedError.status });
 }
 }

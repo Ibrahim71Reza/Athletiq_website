@@ -1,9 +1,13 @@
 // app/api/nutrition-tool/route.ts
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, Content, SafetySetting, GenerationConfig, FinishReason, SafetyRating } from "@google/generative-ai"; // Added FinishReason, SafetyRating
+import { HarmCategory, HarmBlockThreshold, SafetySetting, GenerationConfig, FinishReason } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
-
-const MODEL_NAME = "gemini-3.1-flash-lite"; 
-const API_KEY = process.env.GEMINI_API_KEY || "";
+import {
+    createGeminiClient,
+    formatGeminiError,
+    GEMINI_MODEL,
+    hasGeminiApiKey,
+    missingGeminiApiKeyBody,
+} from "@/lib/gemini";
 
 const MEAL_PLANNER_SYSTEM_INSTRUCTION = `You are "NutriPlanner AI" for the Athlytiq fitness app.
 Your task is to generate a structured, helpful, and general meal plan based on the user's inputs, specifically for the number of days specified in 'Plan Duration'.
@@ -104,8 +108,8 @@ YOU MUST ADHERE TO THE FOLLOWING RULES:
 
 
 export async function POST(req: NextRequest) {
-if (!API_KEY) {
-    return NextResponse.json({ error: "API key not configured" }, { status: 500 });
+if (!hasGeminiApiKey()) {
+    return NextResponse.json(missingGeminiApiKeyBody(), { status: 500 });
 }
 
 let payload: any = {}; // Declare payload outside try to access in catch
@@ -118,7 +122,7 @@ try {
     return NextResponse.json({ error: "Missing mode (mealPlanner or recipeGenerator)" }, { status: 400 });
     }
 
-    const genAI = new GoogleGenerativeAI(API_KEY);
+    const genAI = createGeminiClient();
     let systemInstruction = "";
     let userPromptForAI = "";
 
@@ -153,7 +157,7 @@ try {
     }
     
     const model = genAI.getGenerativeModel({ 
-        model: MODEL_NAME,
+        model: GEMINI_MODEL,
         systemInstruction: { role: "system", parts: [{text: systemInstruction}] },
         generationConfig: { 
             responseMimeType: "application/json",
@@ -214,8 +218,7 @@ try {
     // Now payload is accessible here for logging
     console.error(`[API /api/nutrition-tool] Error (mode: ${payload?.mode || 'unknown'}):`, error.message);
     // console.error(error.stack); // Optionally log stack for more details
-    let errorMessage = "AI tool request failed.";
-    if (error.message) errorMessage = error.message;
-    return NextResponse.json({ error: errorMessage, details: error.toString() }, { status: 500 });
+    const formattedError = formatGeminiError(error, error.message || "AI tool request failed.");
+    return NextResponse.json(formattedError.body, { status: formattedError.status });
 }
 }
