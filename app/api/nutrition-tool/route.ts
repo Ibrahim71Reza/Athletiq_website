@@ -2,7 +2,7 @@
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, Content, SafetySetting, GenerationConfig, FinishReason, SafetyRating } from "@google/generative-ai"; // Added FinishReason, SafetyRating
 import { NextRequest, NextResponse } from "next/server";
 
-const MODEL_NAME = "gemini-1.5-flash-latest"; 
+const MODEL_NAME = "gemini-3.1-flash-lite"; 
 const API_KEY = process.env.GEMINI_API_KEY || "";
 
 const MEAL_PLANNER_SYSTEM_INSTRUCTION = `You are "NutriPlanner AI" for the Athlytiq fitness app.

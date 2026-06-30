@@ -3,7 +3,7 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, Content } from "@
 import { NextRequest, NextResponse } from "next/server";
 
 // CONFIRM THIS IS THE MODEL NAME THAT WORKED FOR YOU
-const MODEL_NAME = "gemini-1.5-flash-latest";
+const MODEL_NAME = "gemini-3.1-flash-lite";
 const API_KEY = process.env.GEMINI_API_KEY || "";
 
 const SYSTEM_INSTRUCTION = `You are "FitBot", a friendly, highly knowledgeable, and motivating AI assistant.
